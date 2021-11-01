@@ -1,0 +1,30 @@
+<%- include("../header");%>
+<div class="col-12">
+    <h1>cuadernillo</h1>
+    <table class="table table-bordered">
+        <thead>
+            <th>No.</th>
+            <th>Nombre</th>
+            <th>Materia</th>
+            <th>Semana</th>
+            <th>Grupo</th>
+            
+        </thead>
+
+        <tbody>
+            <% cuadernillo.forEach(cuadernillo =>{ %>
+
+                <tr>
+                    <td><%= cuadernillo.idCuadernillo %></td>
+                    <td><%= cuadernillo.nombre %></td>
+                    <td><%= cuadernillo.materia %></td>
+                    <td><%= cuadernillo.semana %></td>
+                    <td><%= cuadernillo.grupo %></td>
+                  
+                </tr>
+
+            <% }) %>    
+        </tbody>
+    </table>
+</div>
+<%- include("../footer");%>

@@ -1,0 +1,45 @@
+<%- include("../header");%>
+
+    <div class="col-12">
+
+        <form method="post" action="/cuadernillo/insertar">
+                    
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input required id="nombre" 
+            placeholder="Nombre de cuadernillo" class="form-control" 
+            type="text" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="materia">Materia</label>
+            <input  required id="materia" 
+            placeholder="Materia" class="form-control" 
+            type="text" name="materia">
+        </div>
+        <div class="form-group">
+            <label for="semana">Semana</label>
+            <input  required id="semana" 
+            placeholder="Grupo" class="form-control" 
+            type="text" name="semana">
+        </div>
+
+        <div class="form-group">
+            <label for="grupo">Grupo</label>
+            <input  required id="grupo" 
+            placeholder="Grupo" class="form-control" 
+            type="text" name="grupo">
+        </div>
+
+
+
+        <div class="form-group">
+            <button class="btn btn-success">Guardar</button>
+            <a href="/cuadernillo" class="btn btn-primary">Regresar</a>
+        </div>
+        
+        </form>
+
+
+    </div>
+
+<%- include("../footer");%>
