@@ -1,0 +1,60 @@
+<%- include("../header");%>
+
+    <div class="col-12">
+
+        <form method="post" action="/tarea/insertar">
+                    
+        <div class="form-group">
+            <label for="fechaI">Fecha de inicio</label>
+            <input required id="fechaI" 
+            placeholder="Fecha de inicio" class="form-control" 
+            type="date" name="fechaI">
+        </div>
+
+        <div class="form-group">
+            <label for="fechaF">Fecha de entrega</label>
+            <input required id="fechaF" 
+            placeholder="Fecha de entrega" class="form-control" 
+            type="date" name="fechaF">
+        </div>
+        <div class="form-group">
+            <label for="titulo">Titulo</label>
+            <input required id="titulo" 
+            placeholder="Titulo" class="form-control" 
+            type="text" name="fechaF">
+        </div>
+
+
+        <div class="form-group">
+            <label for="informacion">informacion</label>
+            <input  required id="informacion" 
+            placeholder="informacion" class="form-control" 
+            type="text" name="informacion">
+        </div>
+        <div class="form-group">
+            <label for="instrucciones">instrucciones</label>
+            <input  required id="instrucciones" 
+            placeholder="instrucciones" class="form-control" 
+            type="text" name="instrucciones">
+        </div>
+
+        <div class="form-group">
+            <label for="imagen">Imagenes</label>
+            <input  required id="imagen" 
+            placeholder="Imagenes" class="form-control" 
+            type="BLOB" name="imagen">
+        </div>
+
+
+
+        <div class="form-group">
+            <button class="btn btn-success">Guardar</button>
+            <a href="/tarea" class="btn btn-primary">Regresar</a>
+        </div>
+        
+        </form>
+
+
+    </div>
+
+<%- include("../footer");%>

@@ -1,0 +1,51 @@
+<%- include("../header");%>
+    <div class="col-12">
+        <div align="right">
+            <a href="/auth" class="btn btn-outline-dark ">Cerrar sesion</a>
+        </div>
+        <h1>Tareas</h1>
+
+
+        <table class="table table-bordered">
+            <thead>
+                <th>No.</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de entrega</th>
+                <th>Titulo</th>
+                <th>Informacion</th>
+                <th>Instrucciones</th>
+
+            </thead>
+
+            <tbody>
+                <% tarea.forEach(tarea=>{ %>
+
+                    <tr>
+                       <!-- <td>
+                            <%= tarea.idTarea %>
+                        </td>-->
+                        <td>
+                            <%= tarea.fechaI %>
+                        </td>
+                        <td>
+                            <%= tarea.fechaF %>
+                        </td>
+                        <td>
+                            <%= tarea.titulo %>
+                        </td>
+                        <td>
+                            <%= tarea.informacion %>
+                        </td>
+                        <td>
+                            <%= tarea.instrucciones %>
+                        </td>
+
+                    </tr>
+
+                    <% }) %>
+            </tbody>
+        </table>
+        <a href="/cuadernillo/" class="btn  btn-outline-dark "> Regresar</a>
+
+    </div>
+    <%- include("../footer");%>

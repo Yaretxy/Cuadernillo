@@ -1,30 +1,56 @@
 <%- include("../header");%>
-<div class="col-12">
-    <h1>cuadernillo</h1>
-    <table class="table table-bordered">
-        <thead>
-            <th>No.</th>
-            <th>Nombre</th>
-            <th>Materia</th>
-            <th>Semana</th>
-            <th>Grupo</th>
-            
-        </thead>
+    <div class="col-12">
+        <div align="right">
+            <a href="/auth" class="btn btn-outline-dark ">Cerrar sesion</a>
+        </div>
+        <h1>cuadernillo</h1>
 
-        <tbody>
-            <% cuadernillo.forEach(cuadernillo =>{ %>
 
-                <tr>
-                    <td><%= cuadernillo.idCuadernillo %></td>
-                    <td><%= cuadernillo.nombre %></td>
-                    <td><%= cuadernillo.materia %></td>
-                    <td><%= cuadernillo.semana %></td>
-                    <td><%= cuadernillo.grupo %></td>
-                  
-                </tr>
+        <table class="table table-bordered">
+            <thead>
+                <th>No.</th>
+                <th>Nombre</th>
+                <th>Materia</th>
+                <th>Semana</th>
+                <th>Grupo</th>
+                <th>Seccion de Tareas</th>
 
-            <% }) %>    
-        </tbody>
-    </table>
-</div>
-<%- include("../footer");%>
+            </thead>
+
+            <tbody>
+                <% cuadernillo.forEach(cuadernillo=>{ %>
+
+                    <tr>
+                        <td>
+                            <%= cuadernillo.idCuadernillo %>
+                        </td>
+                        <td>
+                            <%= cuadernillo.nombre %>
+                        </td>
+                        <td>
+                            <%= cuadernillo.materia %>
+                        </td>
+                        <td>
+                            <%= cuadernillo.semana %>
+                        </td>
+                        <td>
+                            <%= cuadernillo.grupo %>
+                        </td>
+                        
+                        <td>
+                            <a href="/tarea/agregar/" class="btn btn-info">Agregar tarea</a>
+                        </td>
+                        <td>
+                            <a href="/tarea/" class="btn btn-info">Mostrar tareas</a>
+                        </td>
+                    </tr>
+
+                    <% }) %>
+            </tbody>
+
+
+        </table>
+
+        <a href="/cuadernillo/agregar/" class="btn  btn-outline-dark "> Crear cuadernillo</a>
+    </div>
+    <%- include("../footer");%>

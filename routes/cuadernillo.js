@@ -4,7 +4,7 @@ const cuadernilloModel= require('../models/cuadernillo_model')
 const router=express.Router()
 
 router.get('/',function(req,res,next){
-
+    if(req.session.loggedIn){
     cuadernilloModel.obtener().then(cuadernillo => {
 
         //res.json(productos)
@@ -13,6 +13,10 @@ router.get('/',function(req,res,next){
     }).catch(err => {
         return res.status(500).send('Error en obtener cuadernillo')
     })
+}else{
+    req.flash('error','')
+    res.render('auth/login')
+  }
 });
 
 router.get('/agregar',function(req,res,next){
@@ -31,7 +35,7 @@ router.post('/insertar',function(req,res,next){
     cuadernilloModel.insertar(nombre,materia,semana,grupo).then(resultado => {
         res.json(resultado)
     }).catch(err => {
-        res.status(500).send('Error al insertar cuadernillo')
+        res.status(500).send('Error al insertar cuadernillo'+err)
     })
 });
 module.exports=router;
